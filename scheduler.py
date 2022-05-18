@@ -82,7 +82,6 @@ async def main():
             await claw(session, client, page)
 
     await client.close()
-    pass
 
 
 if __name__ == "__main__":

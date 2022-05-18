@@ -23,8 +23,7 @@ def from_url_get_filename(url: str) -> str:
     :param url:
     :return:
     """
-    file_name = unquote(url).split("/")[-1]
-    return file_name
+    return unquote(url).split("/")[-1]
 
 
 def from_html_get_pic(html: str) -> List[str]:
@@ -40,7 +39,6 @@ def from_html_get_pic(html: str) -> List[str]:
         pic_url = [tag.attrs["src"] for tag in soup.find_all(name="img", attrs={"class": "image"})][0]
     pic_name = [tag.attrs["alt"] for tag in soup.find_all(name="img", attrs={"class": "image"})][0]
     return pic_name, pic_url
-    pass
 
 
 def from_html_get_url(html: str) -> List[str]:
